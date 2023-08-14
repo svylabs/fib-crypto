@@ -1,4 +1,4 @@
-I designed and implemented a simple crypto system for digital signatures based on Fibonacci numbers using the **Vadja's**[1]  identity. There system works based on some assumptions that are yet to be proven or disproven.
+I designed and implemented a simple crypto system for digital signatures based on Fibonacci numbers using the **Vadja's**[1]  identity. The system works based on some assumptions that are yet to be proven or disproven.
 
 # Fibonacci-Vadja Crypto System
 
