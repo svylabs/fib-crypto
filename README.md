@@ -1,4 +1,4 @@
-I designed and implemented a simple crypto system for digital signatures based on Fibonacci numbers using the **Vadja's**[1]  identity. It is not proven yet, and there are several hypothesis in this system which are not proven and hence the system may be flawed.
+I designed and implemented a simple crypto system for digital signatures based on Fibonacci numbers using the **Vadja's**[1]  identity. There system works based on some assumptions that are yet to be proven or disproven.
 
 # Fibonacci-Vadja Crypto System
 
@@ -6,7 +6,7 @@ I designed and implemented a simple crypto system for digital signatures based o
  
 ### Parameters: Agree on the following parameters
 
-1. Q: A large number which results in a higher pisano period as fibonacci numbers exhibit cyclic period.
+1. Q: A large number which results in a higher pisano period.
  
 ### Key Generation: 
 
