@@ -36,12 +36,6 @@ fn multiply(a: &[[BigUint; 2]; 2], b: &[[BigUint; 2]; 2], q: &BigUint) -> [[BigU
     let b01 = b0.get(1).unwrap();
     let b10 = b1.get(0).unwrap();
     let b11 = b1.get(1).unwrap();
-    /*
-    vec![
-        vec![((a[0][0] * b[0][0]) % q.clone() + (a[0][1] * b[1][0]) % q.clone()) % q.clone(), ((a[0][0] * b[0][1]) % q.clone() + (a[0][1] * b[1][1]) % q.clone()) % q.clone()],
-        vec![((a[1][0] * b[0][0]) % q.clone() + (a[1][1] * b[1][0]) % q.clone()) % q.clone(), ((a[1][0] * b[0][1]) % q.clone() + (a[1][1] * b[1][1]) % q.clone()) % q.clone()]
-    ]
-     */
     [
         [
             ((a00 * b00) % q + (a01 * b10) % q) % q, 
@@ -56,22 +50,14 @@ fn multiply(a: &[[BigUint; 2]; 2], b: &[[BigUint; 2]; 2], q: &BigUint) -> [[BigU
 
 pub fn fibonacci(n: BigUint, m: BigUint) -> BigUint {
     let mut _n = n.clone();
-    //println!("{} - {}", _n, n);
-    // ((0 1)  (1 1)) (0 1)
     let mut result_matrix: [[BigUint;2]; 2] = [[One::one(), Zero::zero()], [Zero::zero(), One::one()]];
     let mut fib_matrix: [[BigUint;2]; 2]= [[Zero::zero(), One::one()], [One::one(),  One::one()]];
     while (_n > Zero::zero()) {
-        //println!("{} - {}", _n, n);
-        //println!("result-matrix: {:?}, fib-matrix: {:?}", result_matrix, fib_matrix);
         if (_n.bit(0)) {
-            // multiply the fib_matrix here
             result_matrix = multiply(&result_matrix, &fib_matrix, &m.clone());
-            //println!("result-matrix: {:?}", result_matrix);
         }
         _n = _n >> 1;
-        // multiply the result and fib_matrix here
         fib_matrix = multiply(&fib_matrix.clone(), &fib_matrix, &m.clone());
-        //println!("fib-matrix={:?}", fib_matrix);
     }
     result_matrix[0][1].clone()
 }
