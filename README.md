@@ -30,7 +30,29 @@ I designed and implemented a simple crypto system for digital signatures based o
 1. Given `Fib(a) mod Q`, where `a` is any random scalar, and Fib is the standard fibonacci function, it's hard to infer a
 2. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `a + b`, it's hard to infer `a` and `b`
 3. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `Fib(a+b) mod Q`, it's hard to infer `a` and `b`
-4. Vadja identity is a necessary and also sufficient condition.
+4. Vadja's identity is a necessary and also sufficient condition.
+```
+    Vadja's identity states that
+
+    Fib(r+s) * Fib(r + m) - Fib(r) * Fib(r + s + m) = (-1)^r * Fib(s) * Fib(m)
+```
+
+The above identity is modifed for this algorithm as below:
+
+As r is chosen as an even number, -1^r is always 1, and instead of doing a subtraction, we verify
+
+```
+  Fib(r + s) * Fib(r + m) = Fib(s) * Fib(m) + Fib(r) * Fib(r + s + m)
+```
+
+    The variables are computed as below: 
+        1. Fib(r + s) - Fib computed after adding `m` to  `r + s`, supplied by the prover as part of signature
+        2. Fib(r + m) is supplied by the prover
+        3. Fib(s) - the public key
+        4. Fib(m) - Can be computed from message `m`
+        5. Fib(r) is supplied by the user as a part of signature.
+        6. Fib(r + s + m) - computed by adding `m` to `r + s` supplied by prover and taking Fib mod Q
+
 5. If needed, additional conditions like Honsberger's Identity can be verified to assert that data given by prover is valid, without much additional computation, but with extra 32 bytes of data in public key and signature.
     1. F(r+s) = F(r-1)F(s) + F(r)F(s+1), F(s+1)- needs to be obtained from additional 32 bytes in public key, and F(r-1) from signature.
     2. F(r+m) = F(r-1)F(m) + F(r)F(m+1), F(r-1) from signature and F(m+1) can be computed at the same time F(m) is being computed, and other data is already available.
