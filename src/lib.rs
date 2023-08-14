@@ -83,9 +83,6 @@ pub fn fibonacci(n: BigUint, m: BigUint) -> BigUint {
  *    2. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `a + b`, it's hard to infer `a` and `b`
  *    3. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `Fib(a+b) mod Q`, it's hard to infer `a` and `b`
  * 
- *    TODO:
- *       1. Identify the right value for Q (take into account pisano period which has a cap of 6 * Q).
- * 
  *    PublicKey size: 32 bytes, Secret Key: 32 bytes
  *    Signature size: 96 bytes
  * 
@@ -101,7 +98,6 @@ pub fn fibonacci(n: BigUint, m: BigUint) -> BigUint {
  *    Signing: Inputs: a message `m` and secret `s`
  *        1. Generate a random `r`, which is even
  *        2. Evaluate: sig=(r+s, Fib(r + m) mod Q, Fib(r) mod Q)
- * 
  * 
  *    Verification: Inputs: sig=(r+s, Fib(r+m) mod Q, Fib(r) mod Q), message `m`, public key: Fib(s) mod Q
  *        1. lhs = ( Fib(r + s) * Fib(r + m) )mod Q
