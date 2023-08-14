@@ -3,6 +3,7 @@ use num_traits::{Zero, One};
 use rand::{Rng, RngCore, CryptoRng};
 
 fn MOD() -> BigUint {
+    // TODO: Identify a suitable parameter
     BigUint::parse_bytes(b"1000000000100000000010000000001000000007", 10).unwrap()
 }
 
@@ -107,9 +108,13 @@ pub fn fibonacci(n: BigUint, m: BigUint) -> BigUint {
  *        2. rhs = Fib(s)  * Fib(m) + Fib(r) * Fib(r + s + m), all operations mod Q, except scalar field addition
  *        3. if lhs == rhs, then verification is successful
  *        4. else: fail
+ * 
+ *    To prove:
+ *         1. Vadja identity is a necessary and also sufficient condition.
+ *         2. If needed, additional conditions like Honsberger's Identity can be verified to assert that data given by prover is valid, without much additional computation, but with extra 32 bytes of data in public key and signature.
+ *              1. F(r+s) = F(r-1)F(s) + F(r)F(s+1), F(s+1)- needs to be obtained from additional 32 bytes in public key, and F(r-1) from signature.
+ *              2. F(r+m) = F(r-1)F(m) + F(r)F(m+1), F(r-1) from signature and F(m+1) can be computed at the same time F(m) is being computed, and other data is already available.
  *
- *    Other properties:
- *        1. Homomorphic addition property
  */
 #[derive(Clone)]
 pub struct FibonacciVajdaCryptoSystem {

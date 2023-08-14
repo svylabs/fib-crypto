@@ -1,23 +1,6 @@
 use fib_crypto::{FibonacciVajdaCryptoSystem, fibonacci};
 use num_bigint::BigUint;
 
-const MOD: u64 = 1000000007;
-
-fn fib(n: u64) -> u64 {
-    let mut a = 0;
-    let mut b = 1;
-    let mut c = 0;
-    if (n == 0) {
-        return 0
-    }
-    for i in 1..n {
-        c = (a + b) % MOD;
-        a = b;
-        b = c
-    }
-    b
-}
-
 fn main() {
     use std::time::Instant;
     let crypto = FibonacciVajdaCryptoSystem::default();
