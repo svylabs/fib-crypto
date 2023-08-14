@@ -2,7 +2,17 @@ I designed and implemented a simple crypto system for digital signatures based o
 
 # Fibonacci-Vadja Crypto System
 
-## Algorithm:
+## Fibonacci Commitment Algorithm
+
+Let `m` be a message, then fibonacci commitment `c` is defined as
+
+```
+   c = Fib(m) mod Q
+```
+
+where c is the fibonacci number mod Q at index m.
+
+## Digital Signature Algorithm:
  
 ### Parameters: Agree on the following parameters
 
