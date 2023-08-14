@@ -46,12 +46,12 @@ As r is chosen as an even number, -1^r is always 1, and instead of doing a subtr
 ```
 
     The variables are computed as below: 
-        1. Fib(r + s) - Fib computed after adding `m` to  `r + s`, supplied by the prover as part of signature
-        2. Fib(r + m) is supplied by the prover
+        1. Fib(r + s) - computed from `r + s`, supplied by the prover as part of signature
+        2. Fib(r + m) is supplied by the prover as part of signature
         3. Fib(s) - the public key
         4. Fib(m) - Can be computed from message `m`
         5. Fib(r) is supplied by the user as a part of signature.
-        6. Fib(r + s + m) - computed by adding `m` to `r + s` supplied by prover and taking Fib mod Q
+        6. Fib(r + s + m) - computed by adding `m` to `r + s` (from signature) and taking Fib mod Q
 
 5. If needed, additional conditions like Honsberger's Identity can be verified to assert that data given by prover is valid, without much additional computation, but with extra 32 bytes of data in public key and signature.
     1. F(r+s) = F(r-1)F(s) + F(r)F(s+1), F(s+1)- needs to be obtained from additional 32 bytes in public key, and F(r-1) from signature.
