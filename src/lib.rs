@@ -63,7 +63,7 @@ pub fn fibonacci(n: BigUint, m: BigUint) -> BigUint {
 }
 
 /**
- *  Fibonacci-Vadja Crypto System based on the following assumptions:
+ *  Fibonacci-Vajda Crypto System based on the following assumptions:
  * 
  *    1. Given `Fib(a) mod Q`, where `a` is any random scalar, and Fib is the standard fibonacci function, it's hard to infer a
  *    2. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `a + b`, it's hard to infer `a` and `b`
@@ -92,7 +92,7 @@ pub fn fibonacci(n: BigUint, m: BigUint) -> BigUint {
  *        4. else: fail
  * 
  *    To prove:
- *         1. Vadja identity is a necessary and also sufficient condition.
+ *         1. Vajda identity is a necessary and also sufficient condition.
  *         2. If needed, additional conditions like Honsberger's Identity can be verified to assert that data given by prover is valid, without much additional computation, but with extra 32 bytes of data in public key and signature.
  *              1. F(r+s) = F(r-1)F(s) + F(r)F(s+1), F(s+1)- needs to be obtained from additional 32 bytes in public key, and F(r-1) from signature.
  *              2. F(r+m) = F(r-1)F(m) + F(r)F(m+1), F(r-1) from signature and F(m+1) can be computed at the same time F(m) is being computed, and other data is already available.

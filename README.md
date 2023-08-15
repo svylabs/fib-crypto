@@ -1,6 +1,6 @@
-I designed and implemented a simple crypto system for digital signatures based on Fibonacci numbers using the **Vadja's**[1]  identity. The system works based on some assumptions that are yet to be proven or disproven.
+I designed and implemented a simple crypto system for digital signatures based on Fibonacci numbers using the **Vajda's**[1]  identity. The system works based on some assumptions that are yet to be proven or disproven.
 
-# Fibonacci-Vadja Crypto System
+# Fibonacci-Vajda Crypto System
 
 ## Fibonacci Commitment Algorithm
 
@@ -40,9 +40,9 @@ where c is the fibonacci number mod Q at index m.
 1. Given `Fib(a) mod Q`, where `a` is any random scalar, and Fib is the standard fibonacci function, it's hard to infer a
 2. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `a + b`, it's hard to infer `a` and `b`
 3. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `Fib(a+b) mod Q`, it's hard to infer `a` and `b`
-4. Vadja's identity is a necessary and also sufficient condition.
+4. Vajda's identity is a necessary and also sufficient condition.
 ```
-    Vadja's identity states that
+    Vajda's identity states that
 
     Fib(r+s) * Fib(r + m) - Fib(r) * Fib(r + s + m) = (-1)^r * Fib(s) * Fib(m)
 ```
