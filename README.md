@@ -12,6 +12,38 @@ Let `m` be a message, then fibonacci commitment `c` is defined as
 
 where c is the fibonacci number mod Q at index m.
 
+## Extended Commitments
+
+Let `m` be a message, then fibonacci commitment `c` is comprised of 3 values:
+
+```
+   c = Fn-1, Fn, Fn+1
+```
+
+These three values together can form a commitment. The advantage of using this scheme is that, it exhibits homomorphic properties.
+
+Let's say, commitment of message `n` is
+
+```
+   Cn = Fn-1, Fn, Fn+1
+```
+
+and commitment of `m` is
+
+```
+   Cm = Fm-1, Fm, Fm+1
+```
+
+The commitment of m+n can be calculated from Cn and Cm as below:
+
+```
+   C(m+n) = Fm-1 * Fn + Fm * Fn+1
+```
+
+This is due to `Honsberger` identity.
+
+The main drawback of this scheme is that Fibonacci sequence is periodic, with an upper bound of 6 * Q, where Q is the mod. 
+
 ## Digital Signature Algorithm:
  
 ### Parameters: Agree on the following parameters
