@@ -54,10 +54,10 @@ pub fn fibonacci(n: BigUint, m: BigUint) -> BigUint {
     let mut fib_matrix: [[BigUint;2]; 2]= [[Zero::zero(), One::one()], [One::one(),  One::one()]];
     while (_n > Zero::zero()) {
         if (_n.bit(0)) {
-            result_matrix = multiply(&result_matrix, &fib_matrix, &m.clone());
+            result_matrix = multiply(&result_matrix, &fib_matrix, &m);
         }
         _n = _n >> 1;
-        fib_matrix = multiply(&fib_matrix.clone(), &fib_matrix, &m.clone());
+        fib_matrix = multiply(&fib_matrix.clone(), &fib_matrix, &m);
     }
     result_matrix[0][1].clone()
 }

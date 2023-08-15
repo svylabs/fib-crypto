@@ -18,8 +18,9 @@ fn main() {
         let signature = crypto.clone().sign(key.clone().1, message.clone(), &mut rng);
         let sign = now.elapsed();
         let verification = crypto.verify(signature.clone(), key.clone().0, message);
-        println!("{:?} {:?} {}", signature, key.clone().0, verification);
+        //println!("{:?} {:?} {}", signature, key.clone().0, verification);
         let verify = now.elapsed();
         println!("Sign: {:.2?}, Verify: {:.2?}", sign.as_millis(), verify.as_millis() - sign.as_millis());
     }
+   // println!("Sign: {:.2?}, Verify: {:.2?}", sign.as_millis(), verify.as_millis() - sign.as_millis());
 }

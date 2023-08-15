@@ -1,4 +1,4 @@
-I designed and implemented a simple crypto system for digital signatures based on Fibonacci numbers using the **Vajda's**[1]  identity. The system works based on some assumptions that are yet to be proven or disproven.
+I designed and implemented a toy crypto system for digital signatures based on Fibonacci numbers using the **Vajda's**[1]  identity. The system works based on some assumptions that are yet to be proven or disproven.
 
 # Fibonacci-Vajda Crypto System
 
@@ -38,6 +38,7 @@ where c is the fibonacci number mod Q at index m.
 ## Assumptions (To be proven)
  
 1. Given `Fib(a) mod Q`, where `a` is any random scalar, and Fib is the standard fibonacci function, it's hard to infer a
+      - The problem reduces to finding a = log(F) to the base 'phi', where phi = (1 + sqrt(5)) / 2
 2. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `a + b`, it's hard to infer `a` and `b`
 3. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `Fib(a+b) mod Q`, it's hard to infer `a` and `b`
 4. Vajda's identity is a necessary and also sufficient condition.
