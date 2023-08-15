@@ -70,9 +70,11 @@ The main drawback of this scheme is that Fibonacci sequence is periodic, with an
 ## Assumptions (To be proven)
  
 1. Given `Fib(a) mod Q`, where `a` is any random scalar, and Fib is the standard fibonacci function, it's hard to infer a
-      - The problem reduces to finding a = log(F) to the base 'phi', where phi = (1 + sqrt(5)) / 2
+      - The problem reduces to finding a = log(F) to the base 'phi', where phi = (1 + sqrt(5)) / 2, which is the equivalent of discrete logarithm problem - which I assume is hard in this case also.
 2. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `a + b`, it's hard to infer `a` and `b`
+      - This is close to schnorr signatures in elliptic curve cryptosystem, where r = a, s = b, and challenge = 1, so I assume this equation holds.
 3. Given `Fib(a) mod Q`, `Fib(b) mod Q`, and `Fib(a+b) mod Q`, it's hard to infer `a` and `b`
+      - This should be true, if assumptions 1 and 2 are true.
 4. Vajda's identity is a necessary and also sufficient condition.
 ```
     Vajda's identity states that
