@@ -99,8 +99,8 @@ As r is chosen as an even number, -1^r is always 1, and instead of doing a subtr
         6. Fib(r + s + m) - computed by adding `m` to `r + s` (from signature) and taking Fib mod Q
 
 5. If needed, additional conditions like Honsberger's Identity can be verified to assert that data - `r + s`, `F(r + m)` and `F(r)` given by prover is valid, adding only slight computation overhead, but with extra 32 bytes of data in public key and signature.
-    1. F(r+s) = F(r-1)F(s) + F(r)F(s+1), F(s+1)- needs to be obtained from additional 32 bytes in public key, and F(r-1) from signature.
-    2. F(r+m) = F(r-1)F(m) + F(r)F(m+1), F(r-1) from signature and F(m+1) can be computed at the same time F(m) is being computed, and other data is already available.
+    1. `F(r+s) = F(r-1)F(s) + F(r)F(s+1)`, F(s+1)- needs to be obtained from additional 32 bytes in public key, and F(r-1) from signature.
+    2. `F(r+m) = F(r-1)F(m) + F(r)F(m+1)`, F(r-1) from signature and F(m+1) can be computed at the same time F(m) is being computed, and other data is already available.
 
 ## Key sizes
 
