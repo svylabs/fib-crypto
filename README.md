@@ -64,7 +64,7 @@ This is due to `Honsberger` identity.
 1. lhs = ( Fib(r + s) * Fib(r + m) )mod Q
 2. rhs = Fib(s)  * Fib(m) + Fib(r) * Fib(r + s + m), all operations mod Q, except scalar field addition
 3. if lhs != rhs fail
-4. verify the following honsenberg's identity
+4. verify the following honsberger's identity
      1. `Fib(r+s) = F(s-1)*F(r) + F(s) * F(r+1)`
      2. `Fib(r+m) = F(m-1)*F(r) + F(m) * F(r+1)`
 5. success if the identity is verified
