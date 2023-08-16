@@ -44,7 +44,7 @@ This is due to `Honsberger` identity.
 
 ## Digital Signature Algorithm:
  
-### Parameters: Agree on the following parameters
+### Parameters:
 
 1. Q: A large number which results in a higher pisano period.
  
